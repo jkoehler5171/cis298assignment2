@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".TemperatureConverter">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/convert_text"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+        <RadioGroup
+            android:id="@+id/from_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/from_text"/>
+
+            <RadioButton
+                android:id="@+id/from_celsius_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/celsius_radio"
+                />
+
+            <RadioButton
+                android:id="@+id/from_fahrenheit_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/fahrenheit_radio"
+                />
+            <RadioButton
+                android:id="@+id/from_kelvin_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/kelvin_radio"
+                />
+            <RadioButton
+                android:id="@+id/from_rankin_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/rankin_radio"
+                />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/to_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/to_text"/>
+
+            <RadioButton
+                android:id="@+id/to_celsius_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/celsius_radio"
+                />
+
+            <RadioButton
+                android:id="@+id/to_fahrenheit_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/fahrenheit_radio"
+                />
+            <RadioButton
+                android:id="@+id/to_kelvin_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/kelvin_radio"
+                />
+            <RadioButton
+                android:id="@+id/to_rankin_radio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/rankin_radio"
+                />
+
+
+        </RadioGroup>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/convert_text"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/result_text"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/formula_text"/>
+
+
+</LinearLayout>
