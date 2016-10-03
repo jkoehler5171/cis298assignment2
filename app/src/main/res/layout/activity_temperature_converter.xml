@@ -11,6 +11,8 @@
         android:text="@string/convert_text"/>
 
     <EditText
+        android:id="@+id/starting_temp"
+        android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -102,16 +104,19 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/convert_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/convert_text"
         />
 
     <TextView
+        android:id="@+id/formula_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/result_text"/>
     <TextView
+        android:id="@+id/solution_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/formula_text"/>
