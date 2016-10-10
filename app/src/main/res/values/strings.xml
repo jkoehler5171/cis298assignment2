@@ -11,7 +11,7 @@
     //Text Strings
     <string name="convert_text">Convert:</string>
     <string name="from_text">From:</string>
-    <string name="to_text">To:</string>
+    <string name="to_text">To:     </string>
 
     //Variable Strings
     <string name="result_text">Test</string>

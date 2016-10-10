@@ -110,13 +110,15 @@
         android:text="@string/convert_text"
         />
 
+
     <TextView
-        android:id="@+id/formula_text"
+        android:id="@+id/solution_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+
     <TextView
-        android:id="@+id/solution_text"
+        android:id="@+id/formula_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />

@@ -22,10 +22,12 @@ import java.io.StringBufferInputStream;
 
 public class TemperatureConverter extends AppCompatActivity {
 
-    private static final String FROM_INT = "0" ;
-    private static final String TO_INT  = "0";
+    private static final String FROM_INT = "from" ;
+    private static final String TO_INT  = "to";
     private static final String FORMULA_TEXT = "Formula Here";
     private static final String SOLUTION_TEXT = "Solution Here";
+
+    private static final String TEST_LOG = "Test";
 
 
 
@@ -68,11 +70,11 @@ public class TemperatureConverter extends AppCompatActivity {
 
             mFormulaTextView = (TextView) findViewById(R.id.formula_text);
 
-            mFormulaTextView.setText(FORMULA_TEXT);
+            mFormulaTextView.setText(savedInstanceState.getString(FORMULA_TEXT));
 
             mSolutionTextView = (TextView) findViewById(R.id.solution_text);
 
-            mSolutionTextView.setText(SOLUTION_TEXT);
+            mSolutionTextView.setText(savedInstanceState.getString(SOLUTION_TEXT));
 
        }
 
@@ -193,13 +195,15 @@ public class TemperatureConverter extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle savedInstanceState) { // This saves the selected buttons along with the formula and solution text.
         super.onSaveInstanceState(savedInstanceState);
 
-        savedInstanceState.putInt(FROM_INT, fromInt);
+        savedInstanceState.putInt(FROM_INT ,fromInt);
 
         savedInstanceState.putInt(TO_INT, toInt);
 
-        savedInstanceState.putString(FORMULA_TEXT, mFormulaTextView.getText().toString() );
+        savedInstanceState.putString(FORMULA_TEXT, mFormulaTextView.getText().toString());
 
-        savedInstanceState.putString(SOLUTION_TEXT, mSolutionTextView.getText().toString() );
+        savedInstanceState.putString(SOLUTION_TEXT, mSolutionTextView.getText().toString());
+
+        Log.d(TEST_LOG, fromInt + toInt + FORMULA_TEXT + SOLUTION_TEXT);
 
     }
 
