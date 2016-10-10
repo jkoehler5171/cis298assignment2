@@ -24,8 +24,8 @@ public class TemperatureConverter extends AppCompatActivity {
 
     private static final String FROM_INT = "0" ;
     private static final String TO_INT  = "0";
-    private static final String FORMULA_TEXT = "";
-    private static final String SOLUTION_TEXT = "";
+    private static final String FORMULA_TEXT = "Formula Here";
+    private static final String SOLUTION_TEXT = "Solution Here";
 
 
 
@@ -197,9 +197,9 @@ public class TemperatureConverter extends AppCompatActivity {
 
         savedInstanceState.putInt(TO_INT, toInt);
 
-        savedInstanceState.putString(FORMULA_TEXT, Calcs.getFormulaString() );
+        savedInstanceState.putString(FORMULA_TEXT, mFormulaTextView.getText().toString() );
 
-        savedInstanceState.putString(SOLUTION_TEXT, Calcs.getSolutionString() );
+        savedInstanceState.putString(SOLUTION_TEXT, mSolutionTextView.getText().toString() );
 
     }
 
