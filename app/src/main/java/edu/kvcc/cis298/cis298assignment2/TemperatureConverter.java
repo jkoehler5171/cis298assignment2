@@ -1,8 +1,13 @@
+//Jordan Koehler
+//MW 2:30 to 4:45
+//October 10th, 2016
+
 package edu.kvcc.cis298.cis298assignment2;
 
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,7 +18,16 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.StringBufferInputStream;
+
 public class TemperatureConverter extends AppCompatActivity {
+
+    private static final String FROM_INT = "0" ;
+    private static final String TO_INT  = "0";
+    private static final String FORMULA_TEXT = "";
+    private static final String SOLUTION_TEXT = "";
+
+
 
     private RadioButton mFromCelsiusRadioButton;
     private RadioButton mFromFahrenheitRadioButton;
@@ -41,13 +55,32 @@ public class TemperatureConverter extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {  //On creation of the app, checks to see if there is any saved information and if so, sets the data accordingly.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperature_converter);
 
-        mFromCelsiusRadioButton = (RadioButton) findViewById(R.id.from_celsius_radio);
 
-        mFromCelsiusRadioButton.setOnClickListener(new View.OnClickListener() {
+        if (savedInstanceState != null) {
+
+            fromInt = savedInstanceState.getInt(FROM_INT);
+
+            toInt = savedInstanceState.getInt(TO_INT);
+
+            mFormulaTextView = (TextView) findViewById(R.id.formula_text);
+
+            mFormulaTextView.setText(FORMULA_TEXT);
+
+            mSolutionTextView = (TextView) findViewById(R.id.solution_text);
+
+            mSolutionTextView.setText(SOLUTION_TEXT);
+
+       }
+
+
+
+        mFromCelsiusRadioButton = (RadioButton) findViewById(R.id.from_celsius_radio); // There's 8 separate Radio Buttons in this App, each one is created like this.
+
+        mFromCelsiusRadioButton.setOnClickListener(new View.OnClickListener() { // Each button also sets a Variable to be used to select the conversion.
             @Override
             public void onClick(View v) {
                 fromInt = 1;
@@ -120,9 +153,9 @@ public class TemperatureConverter extends AppCompatActivity {
             }
         });
 
-        mTemperatureInput= (EditText) findViewById(R.id.starting_temp);
+        mTemperatureInput= (EditText) findViewById(R.id.starting_temp); //This sets up the box in which the Temp to be converted is entered. Set as numbers only in XML
 
-        mConvertButton= (Button) findViewById(R.id.convert_button);
+        mConvertButton= (Button) findViewById(R.id.convert_button); //This button calls the calculations needed by passing in the Input, and the information from the two radio buttons.
 
         mConvertButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +164,7 @@ public class TemperatureConverter extends AppCompatActivity {
                 inputDecimal = Integer.parseInt(mTemperatureInput.getText().toString());
 
                 Calcs.TemperatureCalculation(inputDecimal, fromInt, toInt);
+
 
                 UpdateText();
 
@@ -141,7 +175,7 @@ public class TemperatureConverter extends AppCompatActivity {
 
     }
 
-    private void UpdateText(){
+    private void UpdateText(){  // This updates the text for the formula and solution.
         mFormulaTextView = (TextView) findViewById(R.id.formula_text);
 
         mFormulaTextView.setText(Calcs.getFormulaString());
@@ -149,6 +183,24 @@ public class TemperatureConverter extends AppCompatActivity {
         mSolutionTextView = (TextView) findViewById(R.id.solution_text);
 
         mSolutionTextView.setText(Calcs.getSolutionString());
+
+
+
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) { // This saves the selected buttons along with the formula and solution text.
+        super.onSaveInstanceState(savedInstanceState);
+
+        savedInstanceState.putInt(FROM_INT, fromInt);
+
+        savedInstanceState.putInt(TO_INT, toInt);
+
+        savedInstanceState.putString(FORMULA_TEXT, Calcs.getFormulaString() );
+
+        savedInstanceState.putString(SOLUTION_TEXT, Calcs.getSolutionString() );
+
     }
 
     @Override

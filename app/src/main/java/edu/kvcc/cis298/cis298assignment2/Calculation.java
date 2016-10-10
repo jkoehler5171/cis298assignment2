@@ -1,3 +1,8 @@
+//Jordan Koehler
+//MW 2:30 to 4:45
+//October 10th, 2016
+
+
 package edu.kvcc.cis298.cis298assignment2;
 
 /**
@@ -15,9 +20,7 @@ public Calculation(){
 }
 
 
-    public String getFormulaString() {
-        return mFormulaString;
-    }
+    public String getFormulaString() { return mFormulaString; } //Setters and getters, all pretty straightforward
 
     public void setFormulaString(String formulaString) {
         this.mFormulaString = formulaString;
@@ -31,7 +34,7 @@ public Calculation(){
         this.mSolutionString = solutionString;
     }
 
-    public void TemperatureCalculation(int inputDecimal, int fromInt, int toInt){
+    public void TemperatureCalculation(int inputDecimal, int fromInt, int toInt){ //This method does a check for the type of conversion needed, and then completes it.
 
         if(fromInt == toInt){
 
@@ -43,11 +46,11 @@ public Calculation(){
 
     if(fromInt == 1 && toInt ==2  ) {
 
-       mSolutionDouble = inputDecimal * (9 /5) + 32;
+       mSolutionDouble = inputDecimal * 1.8 + 32;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
-        mFormulaString = "F = C X (9/5) + 32";
+        mFormulaString = "F = C X 1.8 + 32";
 
 
     }
@@ -63,7 +66,7 @@ public Calculation(){
 
     if(fromInt ==1 && toInt == 4) {
 
-        mSolutionDouble = (inputDecimal + 273) * (9/5);
+        mSolutionDouble = (inputDecimal + 273) * 9/5;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
@@ -73,7 +76,7 @@ public Calculation(){
 
     if(fromInt ==2 && toInt == 1) {
 
-        mSolutionDouble = (inputDecimal - 32) * (5/9);
+        mSolutionDouble = (inputDecimal - 32) * 5/9;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
@@ -84,7 +87,7 @@ public Calculation(){
 
     if(fromInt ==2 && toInt == 3) {
 
-        mSolutionDouble = (inputDecimal + 459.67) * (5/9);
+        mSolutionDouble = (inputDecimal + 459.67) * 5/9;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
@@ -114,7 +117,7 @@ public Calculation(){
 
     if(fromInt ==3 && toInt == 2) {
 
-        mSolutionDouble = inputDecimal * (9/5) - 459.67;
+        mSolutionDouble = inputDecimal * 9/5 - 459.67;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
@@ -124,7 +127,7 @@ public Calculation(){
 
     if(fromInt ==3 && toInt == 4) {
 
-        mSolutionDouble = inputDecimal * (9/5);
+        mSolutionDouble = inputDecimal * 9/5;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
@@ -133,7 +136,7 @@ public Calculation(){
     }
 
     if(fromInt ==4 && toInt == 1) {
-        mSolutionDouble =(inputDecimal - 491.67) * (5/9);
+        mSolutionDouble =(inputDecimal - 491.67) * 5/9;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
@@ -151,7 +154,7 @@ public Calculation(){
 
     if(fromInt ==4 && toInt == 3) {
 
-        mSolutionDouble = inputDecimal * (5/9) ;
+        mSolutionDouble = inputDecimal * 5/9 ;
 
         mSolutionString = inputDecimal + " = " + mSolutionDouble;
 
